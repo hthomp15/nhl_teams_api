@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
+// Components
+import TeamStatsTable from '../../components/TeamStatsTable'
+import StatsKeyList from '../../components/StatsKeyList'
+
 function Stats() {
     const [error, setError] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
@@ -21,88 +25,20 @@ function Stats() {
                 }
             )
     }, [])
-    console.log("teamStats", teamStats)
     if (error) {
         return <div>Error: {error.message}</div>
     } else if (!isLoaded) {
         return <div>Loading...</div>
     } else {
+        const allStats = {
+            numericalStats: teamStats.stats[0].splits[0].stat,
+            leagueRanking: teamStats.stats[1].splits[0].stat, 
+            teamName: teamStats.stats[0].splits[0].team.name
+        }
         return (
-            <div className="container">
-                <h2> {teamStats.stats[0].splits[0].team.name} </h2>
-                <table className="table-auto w-full">
-                    <thead>
-                        <tr>
-                            <th className="px-4 py-2">GP</th>
-                            <th className="px-4 py-2">W</th>
-                            <th className="px-4 py-2">L</th>
-                            <th className="px-4 py-2">PTS</th>
-                            <th className="px-4 py-2">OT</th>
-                            <th className="px-4 py-2">GPG</th>
-                            <th className="px-4 py-2">GAPG</th>
-                            <th className="px-4 py-2">SV%</th>
-                            <th className="px-4 py-2">S</th>
-                            <th className="px-4 py-2">SA</th>
-                            <th className="px-4 py-2">S%</th>
-                            <th className="px-4 py-2">FOW%</th>
-                        </tr>
-                    </thead>
-                    <caption> Regular Season Stats </caption>
-                    <tbody>
-                        
-                            <tr>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.gamesPlayed}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.wins}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.losses}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.pts}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.ot}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.goalsPerGame}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.goalsAgainstPerGame}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.savePctg}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.shotsPerGame}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.shotsAllowed}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.shootingPctg}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.faceOffWinPercentage}</td>
-                            </tr>
-                    </tbody>
-                </table>
-                <table className="table-auto w-full">
-                    <caption> Regular Season Rankings </caption>
-                    <thead>
-                        <tr>
-                            <th className="px-4 py-2">GP</th>
-                            <th className="px-4 py-2">W</th>
-                            <th className="px-4 py-2">L</th>
-                            <th className="px-4 py-2">PTS</th>
-                            <th className="px-4 py-2">OT</th>
-                            <th className="px-4 py-2">GPG</th>
-                            <th className="px-4 py-2">GAPG</th>
-                            <th className="px-4 py-2">SV%</th>
-                            <th className="px-4 py-2">S</th>
-                            <th className="px-4 py-2">SA</th>
-                            <th className="px-4 py-2">S%</th>
-                            <th className="px-4 py-2">FOW%</th>
-                        </tr>
-                    </thead>
-                 
-                    <tbody>
-                     
-                            <tr>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.gamesPlayed}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.wins}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.losses}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.pts}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.ot}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.goalsPerGame}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.goalsAgainstPerGame}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.savePctg}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.shotsPerGame}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.shotsAllowed}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.shootingPctg}</td>
-                                <td className="border px-4 py-2">{teamStats.stats[0].splits[0].stat.faceOffWinPercentage}</td>
-                            </tr>
-                    </tbody>
-                </table>
+            <div className="single-team-stats-table">
+                <TeamStatsTable allStats={allStats} />
+                <StatsKeyList />
             </div>
         )
     }
