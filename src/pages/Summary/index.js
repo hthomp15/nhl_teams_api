@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Summary() {
     const [error, setError] = useState(null)
@@ -35,18 +36,19 @@ function Summary() {
                             <th className="px-4 py-2">Conference</th>
                             <th className="px-4 py-2">Division</th>
                             <th className="px-4 py-2">Venue</th>
-                            <th className="px-4 py-2">Official Site</th>
+                            {/* This Messes up my table Padding */}
+                            {/* <th className="px-4 py-2">Official Site</th> */}
                         </tr>
                     </thead>
                     <tbody>
                         {items.teams.map(item => (
                             <tr key={item.id}>
-                                <td className="border px-4 py-2">{item.name}</td>
+                                <td className="border px-4 py-2"><Link to={`/stats/${item.id}`}>{item.name}</Link></td>
                                 <td className="border px-4 py-2">{item.venue.city}</td>
                                 <td className="border px-4 py-2">{item.conference.name}</td>
                                 <td className="border px-4 py-2">{item.division.name}</td>
                                 <td className="border px-4 py-2">{item.venue.name}</td>
-                                <td className="border px-4 py-2"><a href={item.officialSiteUrl}>{item.officialSiteUrl}</a></td>
+                                {/* <td className="border px-4 py-2"><a href={item.officialSiteUrl}>{item.officialSiteUrl}</a></td> */}
                             </tr>
                         ))}
                     </tbody>
