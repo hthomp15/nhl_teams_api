@@ -7,21 +7,18 @@ function Summary() {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        fetch(" https://statsapi.web.nhl.com/api/v1/teams")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true)
-                    setItems(result)
-                },
-                (error) => {
-                    setIsLoaded(true)
-                    setError(error)
-                }
-            )
+        const getTeams = async () => {
+            const result = await fetch("https://statsapi.web.nhl.com/api/v1/teams")
+                .then(res => res.json())
+            setIsLoaded(true)
+            setItems(result)
+        }
+        getTeams()
     }, [])
     console.log("items", items)
     if (error) {
+        setIsLoaded(true)
+        setError(error)
         return <div>Error: {error.message}</div>
     } else if (!isLoaded) {
         return <div>Loading...</div>

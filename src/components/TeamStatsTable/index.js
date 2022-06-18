@@ -2,7 +2,8 @@ import React from 'react';
 
 
 function TeamStatsTable(props) {
-    const { numericalStats, leagueRanking, teamName } = props.allStats;
+    const { allStats } = props;
+    const { numericalStats, leagueRanking, teamName } = allStats;
     // console.log("numericalStats", numericalStats, "leagueRanking", leagueRanking, "teamName", teamName);
     return (
         <div className="container">

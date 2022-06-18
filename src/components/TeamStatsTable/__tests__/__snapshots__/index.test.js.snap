@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TeamStatsTable Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <h2>
+       Test Team 
+    </h2>
+    <table
+      class="team-stats-table table-auto w-full"
+    >
+      <caption>
+         Regular Season Stats 
+      </caption>
+      <thead>
+        <tr>
+          <th
+            class="px-4 py-2"
+          >
+            GP
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            W
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            L
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            PTS
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            OT
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            GPG
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            GAPG
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            SV%
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            S
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            SA
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            S%
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            FOW%
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            20
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            20
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table
+      class="league-rankings-table table-auto w-full"
+    >
+      <caption>
+         Regular Season Rankings 
+      </caption>
+      <thead>
+        <tr>
+          <th
+            class="px-4 py-2"
+          >
+            Overall
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            GPG
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            GAPG
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            SV%
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            S
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            SA
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            S%
+          </th>
+          <th
+            class="px-4 py-2"
+          >
+            FOW%
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+          <td
+            class="border px-4 py-2"
+          >
+            1
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;

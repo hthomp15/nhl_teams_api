@@ -2,16 +2,16 @@ import React from "react";
 import { render, cleanup } from "@testing-library/react";
 import '@testing-library/jest-dom/extend-expect';
 
-import App from "./App";
+import StatsKeyList from "..";
 
 afterEach(cleanup);
 
-describe("App Component", () => {
+describe("StatsKeyList Component", () => {
     it("renders", () => {
-        render(<App />);
+        render(<StatsKeyList />);
     });
     it("matches snapshot DOM node structure", () => {
-        const { asFragment } = render(<App />);
+        const { asFragment } = render(<StatsKeyList />);
         expect(asFragment()).toMatchSnapshot();
     })
 });

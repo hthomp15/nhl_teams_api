@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component matches snapshot DOM node structure 1`] = `
+<DocumentFragment>
+  <footer
+    class="mt-6"
+  >
+    <p
+      class="text-center"
+    >
+       Made with 
+      <span
+        aria-label="heart"
+        role="img"
+      >
+        ❤️
+      </span>
+       by Haile Thompson, May 2022
+    </p>
+  </footer>
+</DocumentFragment>
+`;
