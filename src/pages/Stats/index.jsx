@@ -40,7 +40,7 @@ function Stats() {
         }
         return (
             <div className="single-team-stats-table">
-                <span>Back to Teams</span>
+                <Link to="/"><span>Back to Teams</span></Link>
                 <TeamStatsTable allStats={allStats} />
                 <StatsKeyList />
             </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Nav() { 
+function Header() { 
   return (
     <nav className="nav">
      <h1>NHL Reference</h1>
@@ -8,4 +8,4 @@ function Nav() {
     );
 }
 
-export default Nav;
+export default Header;
