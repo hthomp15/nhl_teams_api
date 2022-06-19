@@ -8,17 +8,23 @@ function Summary() {
 
     useEffect(() => {
         const getTeams = async () => {
-            const result = await fetch("https://statsapi.web.nhl.com/api/v1/teams")
-                .then(res => res.json())
+            try {
+            const url = "https://statsapi.web.nhl.com/api/v1/teams"
+            const res = await fetch(url)
+            console.log(res.ok)
+            const data = await res.json()
             setIsLoaded(true)
-            setItems(result)
+            setItems(data.teams)
+            } catch (error) {
+                console.error(error)
+                setError(error)
+                setIsLoaded(true)
+            }
         }
         getTeams()
     }, [])
     console.log("items", items)
     if (error) {
-        setIsLoaded(true)
-        setError(error)
         return <div>Error: {error.message}</div>
     } else if (!isLoaded) {
         return <div>Loading...</div>
@@ -38,7 +44,7 @@ function Summary() {
                         </tr>
                     </thead>
                     <tbody>
-                        {items.teams.map(item => (
+                        {items.map(item => (
                             <tr key={item.id}>
                                 <td className="border px-4 py-2"><Link to={`/stats/${item.id}`}>{item.name}</Link></td>
                                 <td className="border px-4 py-2">{item.venue.city}</td>
