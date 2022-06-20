@@ -2,38 +2,8 @@
 
 exports[`App Component matches snapshot DOM node structure 1`] = `
 <DocumentFragment>
-  <div
-    class="App"
-  >
-    <nav
-      class="nav"
-    >
-      <h1>
-        NHL Reference
-      </h1>
-      <div>
-        Back to Teams
-      </div>
-    </nav>
-    <div>
-      Loading...
-    </div>
-    <footer
-      class="mt-6"
-    >
-      <p
-        class="text-center"
-      >
-         Made with 
-        <span
-          aria-label="heart"
-          role="img"
-        >
-          ❤️
-        </span>
-         by Haile Thompson, May 2022
-      </p>
-    </footer>
+  <div>
+    Loading...
   </div>
 </DocumentFragment>
 `;

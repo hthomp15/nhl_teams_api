@@ -28,47 +28,44 @@ function AllTeamsTable(props) {
     }
 
     return (
-        <table className="table-auto w-full">
-            <thead>
+        <table className="table-auto w-full rounded opacity-80">
+            <thead className="bg-blue-200">
                 <tr>
-                    <th className="border border-gray-300" onClick={() => sortTeams('team')}>
+                    <th className="border border-white text-white font-extrabold px-1" onClick={() => sortTeams('team')}>
                         {tableHeaders.team}
                         {/* If the column is sorted, add an arrow pointing for asc or dec order */}
-                        {(!isSorted && <span>&#9660;</span>) || (isSorted && <span>&#9650;</span>)}
+                        {(!isSorted && <span className="px-1">&#9660;</span>) || (isSorted && <span className="px-1">&#9650;</span>)}
                     </th>
-                    <th className="border border-gray-300" onClick={() => sortTeams('city')}>
+                    <th className="border border-white text-white font-extrabold px-1" onClick={() => sortTeams('city')}>
                         {tableHeaders.city}
-                        {(!isSorted && <span>&#9660;</span>) || (isSorted && <span>&#9650;</span>)}
+                        {(!isSorted && <span className="px-1">&#9660;</span>) || (isSorted && <span className="px-1">&#9650;</span>)}
                     </th>
-                    <th className="border border-gray-300" onClick={() => sortTeams('conference')}>
+                    <th className="border border-white text-white font-extrabold px-1" onClick={() => sortTeams('conference')}>
                         {tableHeaders.conference}
-                        {(!isSorted && <span>&#9660;</span>) || (isSorted && <span>&#9650;</span>)}
+                        {(!isSorted && <span className="px-1">&#9660;</span>) || (isSorted && <span className="px-1">&#9650;</span>)}
 
                     </th>
-                    <th className="border border-gray-300" onClick={() => sortTeams('division')}>
+                    <th className="border border-white text-white font-extrabold px-1" onClick={() => sortTeams('division')}>
                         {tableHeaders.division}
-                        {(!isSorted && <span>&#9660;</span>) || (isSorted && <span>&#9650;</span>)}
+                        {(!isSorted && <span className="px-1">&#9660;</span>) || (isSorted && <span className="px-1">&#9650;</span>)}
                     </th>
-                    <th className="border border-gray-300" onClick={() => sortTeams('venue')}>
+                    <th className="border border-white text-white font-extrabold px-1" onClick={() => sortTeams('venue')}>
                         {tableHeaders.venue}
-                        {(!isSorted && <span>&#9660;</span>) || (isSorted && <span>&#9650;</span>)}
+                        {(!isSorted && <span className="px-1">&#9660;</span>) || (isSorted && <span className="px-1">&#9650;</span>)}
                     </th>
-                    <th className="border border-gray-300">{tableHeaders.link}</th>
+                    {/* <th className="border border-white text-white font-extrabold px-1">{tableHeaders.link}</th> */}
                 </tr>
             </thead>
-            <tbody>
+            <tbody className="bg-blue-200/30 text-dark">
                  {/* Loop through the data and display each team */}
                 {tableData.map(item => (
-                    <tr key={item.id}>
-                        <td className="border p-2">
-                            <Link to={`/stats/${item.id}`}>{item.team}</Link>
-                        </td>
-                        <td className="border p-2">{item.city}</td>
-                        <td className="border p-2">{item.conference}</td>
-                        <td className="border p-2">{item.division}</td>
-                        <td className="border p-2">{item.venue}</td>
-                        <td className="border p-2"><a href={item.link} target="blank" rel="nonreferrer noopener">{item.link}</a></td>
-                        
+                    <tr className="hover:bg-blue-200/60 hover:text-white text-center" key={item.id}>
+                        <td className="border border-white px-2"><Link to={`/stats/${item.id}`}>{item.team}</Link></td>
+                        <td className="border border-white px-2"><Link to={`/stats/${item.id}`}>{item.city}</Link></td>
+                        <td className="border border-white px-2"><Link to={`/stats/${item.id}`}>{item.conference}</Link></td>
+                        <td className="border border-white px-2"><Link to={`/stats/${item.id}`}>{item.division}</Link></td>
+                        <td className="border border-white px-2"><Link to={`/stats/${item.id}`}>{item.venue}</Link></td>
+                        {/* <td className="border border-white px-2"><a href={item.link} target="blank" rel="nonreferrer noopener">{item.link}</a></td> */}
                     </tr>
                 ))}
             </tbody>

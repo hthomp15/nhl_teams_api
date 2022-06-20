@@ -3,14 +3,16 @@ import { useParams, Link } from 'react-router-dom'
 
 // Components
 import TeamStatsTable from '../../components/TeamStatsTable'
-import StatsKeyList from '../../components/StatsKeyList'
+import StatsKeyList from '../../components/TeamStatsTable/StatsKeyList'
 
-function Stats() {
+function Stats(props) {
+    const { tableData } = props;
     const [error, setError] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
     const [teamStats, setTeamStats] = useState([])
     const { id } = useParams()
 
+    // Async call to get the team stats
     useEffect(() => {
         const getTeamStats = async () => {
             try {
@@ -33,6 +35,8 @@ function Stats() {
     } else if (!isLoaded) {
         return <div>Loading...</div>
     } else {
+
+        //Passing team stats to Component
         const allStats = {
             numericalStats: teamStats.stats[0].splits[0].stat,
             leagueRanking: teamStats.stats[1].splits[0].stat,
@@ -40,9 +44,23 @@ function Stats() {
         }
         return (
             <div className="single-team-stats-table">
-                <Link to="/"><span>Back to Teams</span></Link>
-                <TeamStatsTable allStats={allStats} />
-                <StatsKeyList />
+                <div className="flex justify-end mx-10">
+                    <Link to="/">
+                        <span className="flex hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                className="h-6 w-6 px-1" fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}>
+                                <path strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                            </svg>
+                            Back to Teams
+                        </span>
+                    </Link>
+                </div>
+                <TeamStatsTable allStats={allStats} tableData={tableData} />
             </div>
         )
     }

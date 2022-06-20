@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatsKeyList Component matches snapshot DOM node structure 1`] = `
+<DocumentFragment>
+  <table
+    class="table-auto w-1/3 text-center border-2"
+  >
+    <tbody>
+      <tr
+        class="border border-white"
+      >
+        <th
+          class="border border-white p-1"
+        >
+          GP
+        </th>
+        <td>
+          Games Played
+        </td>
+      </tr>
+      <tr
+        class="border border-white"
+      >
+        <th
+          class="border border-white p-1"
+        >
+          W
+        </th>
+        <td>
+          Wins
+        </td>
+      </tr>
+      <tr
+        class="border border-white"
+      >
+        <th
+          class="border border-white p-1"
+        >
+          L
+        </th>
+        <td>
+          Losses
+        </td>
+      </tr>
+      <tr
+        class="border border-white"
+      >
+        <th
+          class="border border-white p-1"
+        >
+          PTS
+        </th>
+        <td>
+          Points
+        </td>
+      </tr>
+      <tr
+        class="border border-white"
+      >
+        <th
+          class="border border-white p-1"
+        >
+          OT
+        </th>
+        <td>
+          Overtime Games
+        </td>
+      </tr>
+      <tr
+        class="border border-white"
+      >
+        <th
+          class="border border-white p-1"
+        >
+          GPG
+        </th>
+        <td>
+          Goals Per Game
+        </td>
+      </tr>
+      <tr
+        class="border border-white"
+      >
+        <th
+          class="border border-white p-1"
+        >
+          GAPG
+        </th>
+        <td>
+          Goals Against Per Game
+        </td>
+      </tr>
+      <tr
+        class="border border-white"
+      >
+        <th
+          class="border border-white p-1"
+        >
+          SV%
+        </th>
+        <td>
+          Save Percentage
+        </td>
+      </tr>
+      <tr
+        class="border border-white"
+      >
+        <th
+          class="border border-white p-1"
+        >
+          S
+        </th>
+        <td>
+          Shots
+        </td>
+      </tr>
+      <tr
+        class="border border-white"
+      >
+        <th
+          class="border border-white p-1"
+        >
+          SA
+        </th>
+        <td>
+          Shots Allowed
+        </td>
+      </tr>
+      <tr
+        class="border border-white"
+      >
+        <th
+          class="border border-white p-1"
+        >
+          S%
+        </th>
+        <td>
+          Shooting Percentage
+        </td>
+      </tr>
+      <tr
+        class="border border-white"
+      >
+        <th
+          class="border border-white p-1"
+        >
+          FOW%
+        </th>
+        <td>
+          Faceoff Win Percentage
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

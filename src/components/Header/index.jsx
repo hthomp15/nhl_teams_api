@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() { 
   return (
-    <nav className="nav">
-     <h1>NHL Reference</h1>
+    <nav className="w-full mb-4">
+     <h1 className="text-3xl font-mono font-bold text-center bg-blue-200/75 py-3 text-white"><Link to="/">NHL Reference</Link></h1>
     </nav>
     );
 }
