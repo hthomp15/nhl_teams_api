@@ -45,7 +45,7 @@ function Stats(props) {
         return (
             <div className="single-team-stats-table">
                 <div className="flex justify-end mx-10">
-                    <Link to="/">
+                    <Link to="/nhl_teams_api">
                         <span className="flex hover:text-white">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 className="h-6 w-6 px-1" fill="none"

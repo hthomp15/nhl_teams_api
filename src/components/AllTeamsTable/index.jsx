@@ -60,11 +60,11 @@ function AllTeamsTable(props) {
                  {/* Loop through the data and display each team */}
                 {tableData.map(item => (
                     <tr className="hover:bg-blue-200/60 hover:text-white text-center" key={item.id}>
-                        <td className="border border-white px-2"><Link to={`/stats/${item.id}`}>{item.team}</Link></td>
-                        <td className="border border-white px-2"><Link to={`/stats/${item.id}`}>{item.city}</Link></td>
-                        <td className="border border-white px-2"><Link to={`/stats/${item.id}`}>{item.conference}</Link></td>
-                        <td className="border border-white px-2"><Link to={`/stats/${item.id}`}>{item.division}</Link></td>
-                        <td className="border border-white px-2"><Link to={`/stats/${item.id}`}>{item.venue}</Link></td>
+                        <td className="border border-white px-2"><Link to={`/nhl_teams_api/stats/${item.id}`}>{item.team}</Link></td>
+                        <td className="border border-white px-2"><Link to={`/nhl_teams_api/stats/${item.id}`}>{item.city}</Link></td>
+                        <td className="border border-white px-2"><Link to={`/nhl_teams_api/stats/${item.id}`}>{item.conference}</Link></td>
+                        <td className="border border-white px-2"><Link to={`/nhl_teams_api/stats/${item.id}`}>{item.division}</Link></td>
+                        <td className="border border-white px-2"><Link to={`/nhl_teams_api/stats/${item.id}`}>{item.venue}</Link></td>
                         {/* <td className="border border-white px-2"><a href={item.link} target="blank" rel="nonreferrer noopener">{item.link}</a></td> */}
                     </tr>
                 ))}
