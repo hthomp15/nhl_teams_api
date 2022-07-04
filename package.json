@@ -1,7 +1,7 @@
 {
   "name": "nhl-teams-api",
   "version": "0.1.0",
-  "homepage": "https://hthomp15.github.io/nhl_teams_api",
+  "homepage": "https://hthomp15.github.io/nhl_teams_api/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
