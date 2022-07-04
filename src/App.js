@@ -68,7 +68,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/nhl_teams_api" element={<Summary tableHeaders={tableHeaders} tableData={tableData} />} />
-            <Route path="/nhl_teams_api/stats/:id/" element={<Stats tableData={tableData} />} />
+            <Route path="/nhl_teams_api/stats/:id" element={<Stats tableData={tableData} />} />
           </Routes>
           <Footer />
         </Router>
