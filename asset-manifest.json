@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/nhl_teams_api/static/css/main.fa498be4.css",
-    "main.js": "/nhl_teams_api/static/js/main.0d497e9d.js",
+    "main.js": "/nhl_teams_api/static/js/main.8d602d41.js",
     "static/js/787.7d17fce8.chunk.js": "/nhl_teams_api/static/js/787.7d17fce8.chunk.js",
     "index.html": "/nhl_teams_api/index.html",
     "main.fa498be4.css.map": "/nhl_teams_api/static/css/main.fa498be4.css.map",
-    "main.0d497e9d.js.map": "/nhl_teams_api/static/js/main.0d497e9d.js.map",
+    "main.8d602d41.js.map": "/nhl_teams_api/static/js/main.8d602d41.js.map",
     "787.7d17fce8.chunk.js.map": "/nhl_teams_api/static/js/787.7d17fce8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fa498be4.css",
-    "static/js/main.0d497e9d.js"
+    "static/js/main.8d602d41.js"
   ]
 }
