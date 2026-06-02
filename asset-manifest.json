@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/nhl_teams_api/static/css/main.fa498be4.css",
-    "main.js": "/nhl_teams_api/static/js/main.558adfbd.js",
+    "main.css": "/nhl_teams_api/static/css/main.f9f1230f.css",
+    "main.js": "/nhl_teams_api/static/js/main.30ea68de.js",
     "static/js/787.7d17fce8.chunk.js": "/nhl_teams_api/static/js/787.7d17fce8.chunk.js",
     "index.html": "/nhl_teams_api/index.html",
-    "main.fa498be4.css.map": "/nhl_teams_api/static/css/main.fa498be4.css.map",
-    "main.558adfbd.js.map": "/nhl_teams_api/static/js/main.558adfbd.js.map",
+    "main.f9f1230f.css.map": "/nhl_teams_api/static/css/main.f9f1230f.css.map",
+    "main.30ea68de.js.map": "/nhl_teams_api/static/js/main.30ea68de.js.map",
     "787.7d17fce8.chunk.js.map": "/nhl_teams_api/static/js/787.7d17fce8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fa498be4.css",
-    "static/js/main.558adfbd.js"
+    "static/css/main.f9f1230f.css",
+    "static/js/main.30ea68de.js"
   ]
 }
