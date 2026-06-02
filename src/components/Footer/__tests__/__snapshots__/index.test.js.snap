@@ -3,20 +3,27 @@
 exports[`Footer Component matches snapshot DOM node structure 1`] = `
 <DocumentFragment>
   <footer
-    class="mt-6"
+    class="mt-12 border-t border-rink-border"
   >
-    <p
-      class="text-center"
+    <div
+      class="container py-6 text-center text-sm text-slate-500"
     >
-       Made with 
-      <span
-        aria-label="heart"
-        role="img"
+      <p>
+        Made with 
+        <span
+          aria-label="heart"
+          role="img"
+        >
+          ❤️
+        </span>
+         by Haile Thompson
+      </p>
+      <p
+        class="mt-1 text-xs text-slate-600"
       >
-        ❤️
-      </span>
-       by Haile Thompson, May 2022
-    </p>
+        Data via the NHL public API. Not affiliated with the National Hockey League.
+      </p>
+    </div>
   </footer>
 </DocumentFragment>
 `;

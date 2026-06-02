@@ -3,13 +3,32 @@
 exports[`Nav Component matches snapshot DOM node structure 1`] = `
 <DocumentFragment>
   <nav
-    class="nav"
+    class="w-full mb-6 border-b border-rink-border bg-rink-900/80 backdrop-blur sticky top-0 z-20"
   >
-    <h1>
-      NHL Reference
-    </h1>
-    <div>
-      Back to Teams
+    <div
+      class="container flex items-center gap-3 py-4"
+    >
+      <a
+        aria-label="NHL Zone home"
+        class="flex items-center gap-2 group"
+        href="/nhl_teams_api"
+      >
+        <span
+          class="flex h-9 w-9 items-center justify-center rounded-md bg-ice/15 ring-1 ring-ice/40 text-ice text-xl"
+        >
+          🏒
+        </span>
+        <h1
+          class="font-display font-extrabold tracking-wide text-2xl sm:text-3xl uppercase text-slate-100"
+        >
+          NHL 
+          <span
+            class="text-ice group-hover:text-ice-bright transition-colors"
+          >
+            Zone
+          </span>
+        </h1>
+      </a>
     </div>
   </nav>
 </DocumentFragment>

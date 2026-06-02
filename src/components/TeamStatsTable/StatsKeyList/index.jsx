@@ -1,60 +1,33 @@
 import React from "react";
 
+const KEYS = [
+  ["GP", "Games Played"],
+  ["W", "Wins"],
+  ["L", "Losses"],
+  ["PTS", "Points"],
+  ["OT", "Overtime Games"],
+  ["GPG", "Goals Per Game"],
+  ["GAPG", "Goals Against Per Game"],
+  ["SV%", "Save Percentage"],
+  ["S", "Shots"],
+  ["SA", "Shots Allowed"],
+  ["S%", "Shooting Percentage"],
+  ["FOW%", "Faceoff Win Percentage"],
+];
+
 function StatsKeyList() {
-    return (
-        <table className="table-auto w-1/3 text-center border-2">
-            <tbody>
-                <tr className="border border-white">
-                    <th className="border border-white p-1">GP</th>
-                    <td>Games Played</td>
-                </tr>
-                <tr className="border border-white">
-                    <th className="border border-white p-1">W</th>
-                    <td>Wins</td>
-                </tr>
-                <tr className="border border-white">
-                    <th className="border border-white p-1">L</th>
-                    <td>Losses</td>
-                </tr>
-                <tr className="border border-white">
-                    <th className="border border-white p-1">PTS</th>
-                    <td>Points</td>
-                </tr>
-                <tr className="border border-white">
-                    <th className="border border-white p-1">OT</th>
-                    <td>Overtime Games</td>
-                </tr>
-                <tr className="border border-white">
-                    <th className="border border-white p-1">GPG</th>
-                    <td>Goals Per Game</td>
-                </tr>
-                <tr className="border border-white">
-                    <th className="border border-white p-1">GAPG</th>
-                    <td>Goals Against Per Game</td>
-                </tr>
-                <tr className="border border-white">
-                    <th className="border border-white p-1">SV%</th>
-                    <td>Save Percentage</td>
-                </tr>
-                <tr className="border border-white">
-                    <th className="border border-white p-1">S</th>
-                    <td>Shots</td>
-                </tr>
-                <tr className="border border-white">
-                    <th className="border border-white p-1">SA</th>
-                    <td>Shots Allowed</td>
-                </tr>
-                <tr className="border border-white">
-                    <th className="border border-white p-1">S%</th>
-                    <td>Shooting Percentage</td>
-                </tr>
-                <tr className="border border-white">
-                    <th className="border border-white p-1">FOW%</th>
-                    <td>Faceoff Win Percentage</td>
-                </tr>
-            </tbody>
-        </table>
-    );
+  return (
+    <div className="grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+      {KEYS.map(([abbr, label]) => (
+        <div key={abbr} className="flex items-center gap-2 text-sm">
+          <span className="inline-flex min-w-[3rem] justify-center rounded bg-rink-700 px-2 py-0.5 font-display font-bold text-ice">
+            {abbr}
+          </span>
+          <span className="text-slate-400">{label}</span>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default StatsKeyList;

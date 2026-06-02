@@ -1,62 +1,43 @@
 import React from "react";
 import { render, cleanup, screen } from "@testing-library/react";
 import '@testing-library/jest-dom/extend-expect';
-import { rest } from "msw";
-import { setupServer } from "msw/node";
 import App from "./App";
 
-const getTeamsResponse = rest.get("https://statsapi.web.nhl.com/api/v1/teams", (req, res, ctx) => {
-    return res(
-        ctx.json([{
-            teams: [
-                {
-                    id: "1",
-                    name: "New York Rangers",
-                    venue: {
-                        name: "Madison Square Garden",
-                        city: "New York",
-                    },
-                    conference: {
-                        name: "Eastern",
-                    },
-                    division: {
-                        name: "Metropolitan",
-                    },
-                },
-                {
-                    id: "2",
-                    name: "Boston Bruins",
-                    venue: {
-                        name: "TD Garden",
-                        city: "Boston",
-                    },
-                    conference: {
-                        name: "Eastern",
-                    },
-                    division: {
-                        name: "Metropolitan",
-                    },
-                },
-            ],
-        }])
-    );
-});
+// App now imports normalized team data from ./data/teams.json (produced by
+// python/fetch_teams.py). Mock it so the test is independent of live data.
+jest.mock("./data/teams.json", () => [
+    {
+        id: 1,
+        team: "New York Rangers",
+        city: "New York",
+        conference: "Eastern",
+        division: "Metropolitan",
+        logo: "https://assets.nhle.com/logos/nhl/svg/NYR_light.svg",
+        abbrev: "NYR",
+        stats: { numericalStats: {}, leagueRanking: {} },
+    },
+    {
+        id: 2,
+        team: "Boston Bruins",
+        city: "Boston",
+        conference: "Eastern",
+        division: "Atlantic",
+        logo: "https://assets.nhle.com/logos/nhl/svg/BOS_light.svg",
+        abbrev: "BOS",
+        stats: { numericalStats: {}, leagueRanking: {} },
+    },
+]);
 
-const server = new setupServer(getTeamsResponse);
-
-beforeAll(() => server.listen());
 afterEach(cleanup);
-afterAll(() => server.close());
-
 
 test("it should load the team New York Rangers", async () => {
+    // App mounts its own BrowserRouter; the teams table lives at /nhl_teams_api,
+    // so point the location there before rendering.
+    window.history.pushState({}, "", "/nhl_teams_api");
     render(<App />);
     const team = await screen.findByText("New York Rangers");
     expect(team).toBeInTheDocument();
 });
-
-
-afterEach(cleanup);
 
 describe("App Component", () => {
     it("renders", () => {

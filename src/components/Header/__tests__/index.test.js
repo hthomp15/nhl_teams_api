@@ -1,17 +1,21 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import '@testing-library/jest-dom/extend-expect';
 
 import Header from "..";
 
 afterEach(cleanup);
 
+const renderHeader = () =>
+    render(<MemoryRouter><Header /></MemoryRouter>);
+
 describe("Nav Component", () => {
     it("renders", () => {
-        render(<Header />);
+        renderHeader();
     });
     it("matches snapshot DOM node structure", () => {
-        const { asFragment } = render(<Header />);
+        const { asFragment } = renderHeader();
         expect(asFragment()).toMatchSnapshot();
     })
 });

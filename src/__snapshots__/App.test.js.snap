@@ -2,8 +2,268 @@
 
 exports[`App Component matches snapshot DOM node structure 1`] = `
 <DocumentFragment>
-  <div>
-    Loading...
+  <div
+    class="App"
+  >
+    <nav
+      class="w-full mb-6 border-b border-rink-border bg-rink-900/80 backdrop-blur sticky top-0 z-20"
+    >
+      <div
+        class="container flex items-center gap-3 py-4"
+      >
+        <a
+          aria-label="NHL Zone home"
+          class="flex items-center gap-2 group"
+          href="/nhl_teams_api"
+        >
+          <span
+            class="flex h-9 w-9 items-center justify-center rounded-md bg-ice/15 ring-1 ring-ice/40 text-ice text-xl"
+          >
+            🏒
+          </span>
+          <h1
+            class="font-display font-extrabold tracking-wide text-2xl sm:text-3xl uppercase text-slate-100"
+          >
+            NHL 
+            <span
+              class="text-ice group-hover:text-ice-bright transition-colors"
+            >
+              Zone
+            </span>
+          </h1>
+        </a>
+      </div>
+    </nav>
+    <div
+      class="container py-6 lg:px-10"
+    >
+      <div
+        class="mb-6 flex flex-wrap items-end justify-between gap-3"
+      >
+        <div>
+          <h2
+            class="font-display text-3xl font-extrabold uppercase tracking-wide text-slate-100"
+          >
+            Teams
+          </h2>
+          <p
+            class="text-sm text-slate-400"
+          >
+            All 32 NHL clubs — tap a team for stats and roster.
+          </p>
+        </div>
+        <div
+          aria-label="Choose teams layout"
+          class="inline-flex items-center gap-1 rounded-lg border border-rink-border bg-rink-800 p-1"
+          role="group"
+        >
+          <button
+            aria-pressed="true"
+            class="flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-semibold transition-colors bg-ice text-rink-950"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="h-4 w-4"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <rect
+                height="7"
+                rx="1"
+                width="7"
+                x="2"
+                y="2"
+              />
+              <rect
+                height="7"
+                rx="1"
+                width="7"
+                x="11"
+                y="2"
+              />
+              <rect
+                height="7"
+                rx="1"
+                width="7"
+                x="2"
+                y="11"
+              />
+              <rect
+                height="7"
+                rx="1"
+                width="7"
+                x="11"
+                y="11"
+              />
+            </svg>
+            Grid
+          </button>
+          <button
+            aria-pressed="false"
+            class="flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-semibold transition-colors text-slate-400 hover:text-slate-100"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="h-4 w-4"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <rect
+                height="3"
+                rx="1"
+                width="16"
+                x="2"
+                y="3"
+              />
+              <rect
+                height="3"
+                rx="1"
+                width="16"
+                x="2"
+                y="8.5"
+              />
+              <rect
+                height="3"
+                rx="1"
+                width="16"
+                x="2"
+                y="14"
+              />
+            </svg>
+            Table
+          </button>
+        </div>
+      </div>
+      <div
+        class="space-y-10"
+      >
+        <section>
+          <div
+            class="mb-4 flex items-center gap-3"
+          >
+            <h2
+              class="font-display text-xl font-bold uppercase tracking-wider text-slate-200"
+            >
+              Atlantic
+            </h2>
+            <span
+              class="h-px flex-1 bg-rink-border"
+            />
+            <span
+              class="text-xs font-semibold uppercase tracking-wide text-slate-500"
+            >
+              1 teams
+            </span>
+          </div>
+          <div
+            class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
+          >
+            <a
+              class="group flex flex-col items-center rounded-xl border border-rink-border bg-rink-800 p-5 text-center shadow-card transition-all hover:-translate-y-0.5 hover:border-ice hover:bg-rink-700"
+              href="/nhl_teams_api/stats/2"
+            >
+              <img
+                alt="Boston Bruins logo"
+                class="h-20 w-20 transition-transform group-hover:scale-105 object-contain"
+                decoding="async"
+                loading="lazy"
+                src="https://assets.nhle.com/logos/nhl/svg/BOS_light.svg"
+              />
+              <h3
+                class="mt-3 font-display text-lg font-bold uppercase leading-tight tracking-wide text-slate-100"
+              >
+                Boston Bruins
+              </h3>
+              <p
+                class="mt-0.5 text-xs text-slate-400"
+              >
+                Boston
+              </p>
+              <span
+                class="mt-2 inline-block rounded-full border border-rink-border bg-rink-900 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-ice"
+              >
+                Atlantic
+              </span>
+            </a>
+          </div>
+        </section>
+        <section>
+          <div
+            class="mb-4 flex items-center gap-3"
+          >
+            <h2
+              class="font-display text-xl font-bold uppercase tracking-wider text-slate-200"
+            >
+              Metropolitan
+            </h2>
+            <span
+              class="h-px flex-1 bg-rink-border"
+            />
+            <span
+              class="text-xs font-semibold uppercase tracking-wide text-slate-500"
+            >
+              1 teams
+            </span>
+          </div>
+          <div
+            class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
+          >
+            <a
+              class="group flex flex-col items-center rounded-xl border border-rink-border bg-rink-800 p-5 text-center shadow-card transition-all hover:-translate-y-0.5 hover:border-ice hover:bg-rink-700"
+              href="/nhl_teams_api/stats/1"
+            >
+              <img
+                alt="New York Rangers logo"
+                class="h-20 w-20 transition-transform group-hover:scale-105 object-contain"
+                decoding="async"
+                loading="lazy"
+                src="https://assets.nhle.com/logos/nhl/svg/NYR_light.svg"
+              />
+              <h3
+                class="mt-3 font-display text-lg font-bold uppercase leading-tight tracking-wide text-slate-100"
+              >
+                New York Rangers
+              </h3>
+              <p
+                class="mt-0.5 text-xs text-slate-400"
+              >
+                New York
+              </p>
+              <span
+                class="mt-2 inline-block rounded-full border border-rink-border bg-rink-900 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-ice"
+              >
+                Metropolitan
+              </span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+    <footer
+      class="mt-12 border-t border-rink-border"
+    >
+      <div
+        class="container py-6 text-center text-sm text-slate-500"
+      >
+        <p>
+          Made with 
+          <span
+            aria-label="heart"
+            role="img"
+          >
+            ❤️
+          </span>
+           by Haile Thompson
+        </p>
+        <p
+          class="mt-1 text-xs text-slate-600"
+        >
+          Data via the NHL public API. Not affiliated with the National Hockey League.
+        </p>
+      </div>
+    </footer>
   </div>
 </DocumentFragment>
 `;

@@ -1,28 +1,61 @@
 import React from 'react';
 
-//Conmponents 
-// import TeamBasicInfoTable from './TeamBasicInfoTable';
-import NumericalStatsTable from './NumericalStatsTable';
-import LeagueRankingTable from './LeagueRankingTable';
+// Components
+import TeamHero from '../TeamHero';
+import StatTileGrid from '../StatTileGrid';
+import RosterSection from '../RosterSection';
 import StatsKeyList from './StatsKeyList';
 
-
-
+// Composition root for a single team's detail page. `allStats` carries the
+// stats plus (when available) team metadata and the roster. Everything is
+// optional-friendly so the component still renders with minimal props.
 function TeamStatsTable(props) {
-    const { allStats, tableData } = props;
-    // const teamBasicInfo = tableData
-    
-    // Destructure for easier calling on tables
-    const { numericalStats, leagueRanking, teamName } = allStats;
-    console.log("numericalStats", numericalStats, "leagueRanking", leagueRanking, "teamName", teamName);
+    const { allStats = {} } = props;
+    const {
+        numericalStats,
+        leagueRanking,
+        teamName,
+        logo,
+        abbrev,
+        city,
+        conference,
+        division,
+        roster,
+    } = allStats;
 
     return (
-        <div className="container flex flex-col my-3 items-center opacity-80">
-            <h2 className="font-extrabold my-4 text-white text-2xl bg-blue-200 rounded px-2 underline"> {teamName} </h2>
-            {/* <TeamBasicInfoTable teamBasicInfo={teamBasicInfo} /> */}
-            <NumericalStatsTable numericalStats={numericalStats} />
-            <LeagueRankingTable leagueRanking={leagueRanking} />
-            <StatsKeyList />
+        <div className="container my-6 space-y-10">
+            <TeamHero
+                teamName={teamName}
+                logo={logo}
+                abbrev={abbrev}
+                city={city}
+                conference={conference}
+                division={division}
+                numericalStats={numericalStats}
+                leagueRanking={leagueRanking}
+            />
+
+            <section>
+                <h3 className="mb-3 font-display text-xl font-bold uppercase tracking-wider text-slate-200">
+                    Season Stats
+                </h3>
+                <StatTileGrid numericalStats={numericalStats} leagueRanking={leagueRanking} />
+            </section>
+
+            <section>
+                <h3 className="mb-3 font-display text-xl font-bold uppercase tracking-wider text-slate-200">
+                    Roster
+                </h3>
+                <RosterSection roster={roster} />
+            </section>
+
+            <section>
+                <h3 className="mb-3 font-display text-base font-bold uppercase tracking-wider text-slate-400">
+                    Stats Key
+                </h3>
+                <StatsKeyList />
+            </section>
         </div>
     );
 }

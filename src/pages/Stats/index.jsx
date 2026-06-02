@@ -1,54 +1,41 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 
 // Components
 import TeamStatsTable from '../../components/TeamStatsTable'
-import StatsKeyList from '../../components/TeamStatsTable/StatsKeyList'
+
+// Team data (including per-team stats) is normalized by python/fetch_teams.py.
+import teamsData from '../../data/teams.json'
 
 function Stats(props) {
     const { tableData } = props;
-    const [error, setError] = useState(null)
-    const [isLoaded, setIsLoaded] = useState(false)
-    const [teamStats, setTeamStats] = useState([])
     const { id } = useParams()
 
-    // Async call to get the team stats
-    useEffect(() => {
-        const getTeamStats = async () => {
-            try {
-                const url = `https://statsapi.web.nhl.com/api/v1/teams/${id}/stats`
-                const res = await fetch(url)
-                console.log(res.ok)
-                const data = await res.json()
-                setIsLoaded(true)
-                setTeamStats(data)
-            } catch (error) {
-                console.error(error)
-                setError(error)
-                setIsLoaded(true)
-            }
-        };
-        getTeamStats()
-    }, [id])
-    if (error) {
-        return <div>Error: {error.message}</div>
-    } else if (!isLoaded) {
-        return <div>Loading...</div>
+    // Stats now come from the committed JSON instead of a live API call.
+    const team = teamsData.find(t => String(t.id) === id)
+    if (!team) {
+        return <div>Team not found</div>
     } else {
 
-        //Passing team stats to Component
+        //Passing team stats + metadata + roster to Component
         const allStats = {
-            numericalStats: teamStats.stats[0].splits[0].stat,
-            leagueRanking: teamStats.stats[1].splits[0].stat,
-            teamName: teamStats.stats[0].splits[0].team.name
+            numericalStats: team.stats.numericalStats,
+            leagueRanking: team.stats.leagueRanking,
+            teamName: team.team,
+            logo: team.logo,
+            abbrev: team.abbrev,
+            city: team.city,
+            conference: team.conference,
+            division: team.division,
+            roster: team.roster
         }
         return (
             <div className="single-team-stats-table">
-                <div className="flex justify-end mx-10">
+                <div className="container flex justify-start pt-2">
                     <Link to="/nhl_teams_api">
-                        <span className="flex hover:text-white">
+                        <span className="flex items-center text-slate-300 hover:text-ice transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6 px-1" fill="none"
+                                className="h-5 w-5 mr-1" fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
                                 strokeWidth={2}>

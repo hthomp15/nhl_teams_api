@@ -6,7 +6,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #A3CEF1;
+  color: #E2E8F0;
+  background-color: #0A0E14;
+  background-image: radial-gradient(
+    ellipse 100% 60% at 50% 0%,
+    rgba(56, 189, 248, 0.08),
+    transparent 70%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
   min-width: fit-content;
 }
 
